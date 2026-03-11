@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBrand Modern Landing Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Minimal custom CSS natively */
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Hero gradient background */
+      #hero {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e1b4b 60%,
+          #0c4a6e 100%
+        );
+        min-height: 100vh;
+      }
+
+      /* Gradient text */
+      .text-gradient {
+        background: linear-gradient(90deg, #818cf8, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Card hover lift */
+      .card-hover {
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15) !important;
+      }
+
+      /* Step number circle */
+      .step-circle {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        background: linear-gradient(135deg, #6366f1, #06b6d4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #fff;
+      }
+
+      /* Step connector */
+      .step-line {
+        width: 2px;
+        min-height: 36px;
+        flex: 1;
+        background: linear-gradient(to bottom, #6366f1, transparent);
+        margin: 0.3rem auto;
+      }
+
+      /* Feature icon box */
+      .feature-icon-box {
+        width: 52px;
+        height: 52px;
+        background: rgba(99, 102, 241, 0.12);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        color: #6366f1;
+      }
+
+      /* Avatar circle */
+      .avatar-circle {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        background: linear-gradient(135deg, #6366f1, #06b6d4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: #fff;
+      }
+
+      /* CTA background */
+      #cta {
+        background: linear-gradient(135deg, #0f172a, #1e1b4b);
+      }
+
+      /* Mock dashboard bars */
+      .mock-bar {
+        height: 10px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #6366f1, #06b6d4);
+      }
+      .mock-bar.alt {
+        background: linear-gradient(90deg, #22d3ee, #818cf8);
+      }
+      .mock-line {
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.15);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-dark">
+    <!-- -- NAVBAR -- Bootstrap navbar component -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-white border-opacity-10"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#"
+          >My<span class="text-primary">Brand</span></a
+        >
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link px-3 fw-medium" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 fw-medium" href="#how">How it Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 fw-medium" href="#testimonials"
+                >Testimonials</a
+              >
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a
+                class="btn btn-primary rounded-pill px-4 btn-sm fw-semibold"
+                href="#cta"
+                >Get Started</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- -- HERO -- Bootstrap grid + utilities -->
+    <section id="hero" class="d-flex align-items-center overflow-hidden">
+      <div class="container py-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 text-white">
+            <!-- Bootstrap badge -->
+            <span
+              class="badge bg-primary bg-opacity-25 text-primary-emphasis border border-primary-subtle rounded-pill px-3 py-2 mb-4 d-inline-block fw-semibold"
+            >
+              <i class="bi bi-stars me-1"></i> Now in public beta
+            </span>
+            <h1 class="display-4 fw-bold lh-sm mb-4">
+              Build something
+              <span class="text-gradient">extraordinary</span> today
+            </h1>
+            <p class="fs-5 text-white-50 mb-4 lh-lg" style="max-width: 520px">
+              A modern platform that helps you craft stunning digital
+              experiences faster than ever no compromise on quality.
+            </p>
+            <!-- Bootstrap btn components -->
+            <div class="d-flex flex-wrap gap-3 mb-5">
+              <a
+                href="#cta"
+                class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow"
+                >Get Started Free</a
+              >
+              <a
+                href="#how"
+                class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold"
+                >See How It Works</a
+              >
+            </div>
+            <!-- Stats using d-flex + border utilities -->
+            <div
+              class="d-flex flex-wrap gap-4 border-top border-white border-opacity-10 pt-4"
+            >
+              <div>
+                <div class="fs-3 fw-bold text-white">10K+</div>
+                <div
+                  class="small text-white-50 text-uppercase"
+                  style="letter-spacing: 0.5px"
+                >
+                  Active Users
+                </div>
+              </div>
+              <div class="border-start border-white border-opacity-10 ps-4">
+                <div class="fs-3 fw-bold text-white">99.9%</div>
+                <div
+                  class="small text-white-50 text-uppercase"
+                  style="letter-spacing: 0.5px"
+                >
+                  Uptime
+                </div>
+              </div>
+              <div class="border-start border-white border-opacity-10 ps-4">
+                <div class="fs-3 fw-bold text-white">4.9?</div>
+                <div
+                  class="small text-white-50 text-uppercase"
+                  style="letter-spacing: 0.5px"
+                >
+                  Rating
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mock dashboard � Bootstrap card + progress component -->
+          <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
+            <div
+              class="card bg-white bg-opacity-10 border border-white border-opacity-10 rounded-4 p-4 text-white"
+            >
+              <div
+                class="card bg-white bg-opacity-10 border-0 rounded-3 p-3 mb-3"
+              >
+                <div class="mock-bar mb-2" style="width: 75%"></div>
+                <div class="mock-line mb-2" style="width: 55%"></div>
+                <div class="mock-line" style="width: 40%"></div>
+              </div>
+              <div
+                class="card bg-white bg-opacity-10 border-0 rounded-3 p-3 mb-3"
+              >
+                <div class="mock-bar alt mb-2" style="width: 90%"></div>
+                <div class="mock-line mb-2" style="width: 70%"></div>
+                <div class="mock-line" style="width: 50%"></div>
+              </div>
+              <div class="mb-2">
+                <div
+                  class="d-flex justify-content-between small text-white-50 mb-1"
+                >
+                  <span>Performance</span><span>87%</span>
+                </div>
+                <!-- Bootstrap progress component -->
+                <div class="progress rounded-pill" style="height: 6px">
+                  <div class="progress-bar bg-info" style="width: 87%"></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex justify-content-between small text-white-50 mb-1"
+                >
+                  <span>Reliability</span><span>99%</span>
+                </div>
+                <div class="progress rounded-pill" style="height: 6px">
+                  <div class="progress-bar bg-primary" style="width: 99%"></div>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <span class="small text-white-50">Live Dashboard Preview</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- FEATURES -- Bootstrap card grid -->
+    <section id="features" class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <span
+            class="text-primary fw-bold text-uppercase small"
+            style="letter-spacing: 1.5px"
+            >Features</span
+          >
+          <h2 class="display-5 fw-bold mt-2 mb-3">
+            Everything you need to succeed
+          </h2>
+          <p class="text-muted mx-auto" style="max-width: 500px">
+            Powerful tools designed for teams of all sizes, from solo creators
+            to enterprise organizations.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-2 card-hover">
+              <div class="card-body p-4">
+                <div class="feature-icon-box mb-3">
+                  <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Blazing Fast</h5>
+                <p class="text-muted small mb-0">
+                  Optimized infrastructure ensures your projects load instantly,
+                  delivering a seamless experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-2 card-hover">
+              <div class="card-body p-4">
+                <div class="feature-icon-box mb-3">
+                  <i class="bi bi-shield-check-fill"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Secure by Default</h5>
+                <p class="text-muted small mb-0">
+                  Enterprise-grade security baked in from the ground up. Your
+                  data is always encrypted.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-2 card-hover">
+              <div class="card-body p-4">
+                <div class="feature-icon-box mb-3">
+                  <i class="bi bi-bar-chart-fill"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Smart Analytics</h5>
+                <p class="text-muted small mb-0">
+                  Gain deep insights with real-time analytics dashboards. Make
+                  data-driven decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-2 card-hover">
+              <div class="card-body p-4">
+                <div class="feature-icon-box mb-3">
+                  <i class="bi bi-puzzle-fill"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Easy Integrations</h5>
+                <p class="text-muted small mb-0">
+                  Connect with 100+ tools you already love. Automate workflows
+                  without writing a single line of code.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-2 card-hover">
+              <div class="card-body p-4">
+                <div class="feature-icon-box mb-3">
+                  <i class="bi bi-phone-fill"></i>
+                </div>
+                <h5 class="fw-bold mb-2">Mobile Ready</h5>
+                <p class="text-muted small mb-0">
+                  Fully responsive design ensures a perfect experience across
+                  all devices � phone, tablet, or desktop.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-2 card-hover">
+              <div class="card-body p-4">
+                <div class="feature-icon-box mb-3">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <h5 class="fw-bold mb-2">24/7 Support</h5>
+                <p class="text-muted small mb-0">
+                  Our dedicated support team is always ready to help via chat,
+                  email, or phone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- HOW IT WORKS -- -->
+    <section id="how" class="py-5 bg-white">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <span
+            class="text-primary fw-bold text-uppercase small"
+            style="letter-spacing: 1.5px"
+            >Process</span
+          >
+          <h2 class="display-5 fw-bold mt-2">Up and running in minutes</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="d-flex gap-4 align-items-start mb-2">
+              <div class="d-flex flex-column align-items-center">
+                <div class="step-circle">1</div>
+                <div class="step-line"></div>
+              </div>
+              <div class="pb-4">
+                <h5 class="fw-bold mb-1">Create your account</h5>
+                <p class="text-muted small mb-0 lh-lg">
+                  Sign up for free in seconds. No credit card required to get
+                  started.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex gap-4 align-items-start mb-2">
+              <div class="d-flex flex-column align-items-center">
+                <div class="step-circle">2</div>
+                <div class="step-line"></div>
+              </div>
+              <div class="pb-4">
+                <h5 class="fw-bold mb-1">Set up your project</h5>
+                <p class="text-muted small mb-0 lh-lg">
+                  Use our guided wizard to configure your workspace in just a
+                  few clicks.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex gap-4 align-items-start">
+              <div class="step-circle">3</div>
+              <div>
+                <h5 class="fw-bold mb-1">Launch and grow</h5>
+                <p class="text-muted small mb-0 lh-lg">
+                  Go live instantly and use built-in analytics to iterate and
+                  scale your product.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- TESTIMONIALS -- Bootstrap card + blockquote -->
+    <section id="testimonials" class="py-5 bg-light">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <span
+            class="text-primary fw-bold text-uppercase small"
+            style="letter-spacing: 1.5px"
+            >Testimonials</span
+          >
+          <h2 class="display-5 fw-bold mt-2">Loved by thousands of users</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 card-hover">
+              <div class="card-body p-4">
+                <div class="text-warning mb-3">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i>
+                </div>
+                <blockquote
+                  class="blockquote fst-italic text-secondary small mb-4"
+                >
+                  <p>
+                    "This platform completely transformed how our team works.
+                    The speed and reliability are unmatched."
+                  </p>
+                </blockquote>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="avatar-circle">AR</div>
+                  <div>
+                    <div class="fw-bold small">Andi Rahmat</div>
+                    <div class="text-muted" style="font-size: 0.78rem">
+                      CTO, TechCorp
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 card-hover">
+              <div class="card-body p-4">
+                <div class="text-warning mb-3">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i>
+                </div>
+                <blockquote
+                  class="blockquote fst-italic text-secondary small mb-4"
+                >
+                  <p>
+                    "Incredibly intuitive and feature-rich. We cut our launch
+                    time in half within the first week."
+                  </p>
+                </blockquote>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="avatar-circle">SP</div>
+                  <div>
+                    <div class="fw-bold small">Sari Putri</div>
+                    <div class="text-muted" style="font-size: 0.78rem">
+                      Product Lead, StartupX
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 card-hover">
+              <div class="card-body p-4">
+                <div class="text-warning mb-3">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i>
+                </div>
+                <blockquote
+                  class="blockquote fst-italic text-secondary small mb-4"
+                >
+                  <p>
+                    "The support team is exceptional. Any issue we had was
+                    resolved within minutes. Highly recommend!"
+                  </p>
+                </blockquote>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="avatar-circle">BW</div>
+                  <div>
+                    <div class="fw-bold small">Budi Wahyu</div>
+                    <div class="text-muted" style="font-size: 0.78rem">
+                      Founder, CreativeStudio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- CTA -- Bootstrap jumbotron-style -->
+    <section id="cta" class="py-5 text-white">
+      <div class="container py-4 text-center">
+        <span
+          class="badge bg-primary bg-opacity-25 text-primary-emphasis border border-primary-subtle rounded-pill px-3 py-2 mb-4 d-inline-block fw-semibold"
+        >
+          Limited time offer
+        </span>
+        <h2 class="display-4 fw-bold mb-3">Ready to get started?</h2>
+        <p
+          class="fs-5 text-white-50 mx-auto mb-5"
+          style="max-width: 440px; line-height: 1.8"
+        >
+          Join over 10,000 teams already building with MyBrand. Start for free,
+          upgrade anytime.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a
+            href="#"
+            class="btn btn-primary btn-lg rounded-pill px-5 fw-semibold shadow"
+          >
+            <i class="bi bi-rocket-takeoff me-2"></i>Start for Free
+          </a>
+          <a
+            href="#features"
+            class="btn btn-outline-light btn-lg rounded-pill px-5 fw-semibold"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- FOOTER -- Bootstrap dark bg + grid -->
+    <footer
+      class="bg-dark text-white-50 pt-5 pb-3 border-top border-secondary border-opacity-25"
+    >
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4">
+            <div class="fw-bold fs-5 text-white mb-2">
+              My<span class="text-primary">Brand</span>
+            </div>
+            <p class="small lh-lg" style="max-width: 260px">
+              Building the future of digital products, one line of code at a
+              time.
+            </p>
+            <div class="d-flex gap-2 mt-3">
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-secondary text-white-50 rounded-2"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-secondary text-white-50 rounded-2"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-secondary text-white-50 rounded-2"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-sm btn-outline-secondary text-white-50 rounded-2"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-2">
+            <h6
+              class="text-white text-uppercase small fw-semibold mb-3"
+              style="letter-spacing: 0.8px"
+            >
+              Product
+            </h6>
+            <ul class="list-unstyled small lh-lg">
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Changelog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Roadmap</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6
+              class="text-white text-uppercase small fw-semibold mb-3"
+              style="letter-spacing: 0.8px"
+            >
+              Company
+            </h6>
+            <ul class="list-unstyled small lh-lg">
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6
+              class="text-white text-uppercase small fw-semibold mb-3"
+              style="letter-spacing: 0.8px"
+            >
+              Legal
+            </h6>
+            <ul class="list-unstyled small lh-lg">
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Privacy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none">Terms</a>
+              </li>
+              <li>
+                <a href="#" class="text-white-50 text-decoration-none"
+                  >Cookies</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="border-secondary border-opacity-25" />
+        <p class="text-center small text-white-50 mb-0">
+          � 2026 MyBrand. All rights reserved. Built with
+          <a
+            href="https://getbootstrap.com"
+            class="text-primary text-decoration-none"
+            >Bootstrap 5</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
